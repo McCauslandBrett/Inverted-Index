@@ -50,12 +50,26 @@ class term:
       if fname in self.postings:
           return True
       return False
-
+    
     def display_wieghtings(self,dict_docs):
        for post in self.postings:
-         print(post,self.postings[post])
-       print(math.log(2,(len(dict_docs))/1+len(self.postings)))
-            
+          #print(post)
+          numwords_in_post=dict_docs[post]
+          #print( numwords_in_post)
+          term_freq = self.postings[post]
+          #print (term_freq)
+          tf= term_freq/numwords_in_post
+          numdicts=len(dict_docs)
+          #print(numdicts)
+          numdoc_term_in= len(self.postings)
+          df= numdicts/numdoc_term_in+1
+          idf = math.log(2, df)
+          #print(idf)
+          print(post,',',round(tf,4),',',round(idf,4),',',round(tf*idf,4))
+              #tf, idf, and tf-idf i
+         #print(post,self.postings[post])
+         
+      
 
 def load_stops(stopwords,path):
 
@@ -101,20 +115,22 @@ def loadWcountWDoc(dict_terms,dict_docs,path):
          for line in f:
              word_count(line.strip().split(' '),dict_terms,dict_docs, filename)
 
-def Prompt(dict_terms): 
+def Prompt(dict_terms,dict_docs): 
  run=True
  while run:
    x=input('enter the term of interest.')
-   if x =='QUIT':
+   x=x.lower()
+   if x =='quit':
        run=False
        continue
    if x in dict_terms:
-       t=dict_terms[x]
+       term=dict_terms[x]
        print("list of the postings for that term:")
-       print(t.postings)
+       #print(t.postings)
+       term.display_wieghtings(dict_docs)
        
    else:
-       print('a suitable message')
+       print('not in the inverted file')
     
 
 
@@ -132,8 +148,8 @@ dict_docs={}
 path2="data"
 loadWcountWDoc(dict_terms,dict_docs,path2)
 t=dict_terms['system']
-t.display_wieghtings(dict_docs)
-
+#t.display_wieghtings(dict_docs)
+Prompt(dict_terms,dict_docs)
 
 
 
