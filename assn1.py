@@ -38,19 +38,19 @@ class term:
     def __init__(self,numdocs,postings):
         self.numdocs=numdocs
         self.postings=postings
-        
+
     def insertposting(self,fname):
         self.postings[fname]=1
         self.numdocs+=1
         
     def incrdocfreq(self,fname):
         self.postings[fname]+=1
-        
+
     def existposting(self,fname):
       if fname in self.postings:
           return True
       return False
-    
+
     def display_wieghtings(self,dict_docs):
        for post in self.postings:
           #print(post)
@@ -68,8 +68,8 @@ class term:
           print(post,',',round(tf,4),',',round(idf,4),',',round(tf*idf,4))
               #tf, idf, and tf-idf i
          #print(post,self.postings[post])
-         
-      
+
+
 
 def load_stops(stopwords,path):
 
@@ -115,7 +115,7 @@ def loadWcountWDoc(dict_terms,dict_docs,path):
          for line in f:
              word_count(line.strip().split(' '),dict_terms,dict_docs, filename)
 
-def Prompt(dict_terms,dict_docs): 
+def Prompt(dict_terms,dict_docs):
  run=True
  while run:
    x=input('enter the term of interest.')
@@ -128,10 +128,10 @@ def Prompt(dict_terms,dict_docs):
        print("list of the postings for that term:")
        #print(t.postings)
        term.display_wieghtings(dict_docs)
-       
+
    else:
        print('not in the inverted file')
-    
+
 
 
 
@@ -150,16 +150,3 @@ loadWcountWDoc(dict_terms,dict_docs,path2)
 t=dict_terms['system']
 #t.display_wieghtings(dict_docs)
 Prompt(dict_terms,dict_docs)
-
-
-
-
-
-
-
-
-
-
-
-
-
