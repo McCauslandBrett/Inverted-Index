@@ -1,14 +1,14 @@
 # IRassn1
 
 Design:
-DATA_STRUCTURE_1: term        := user defined class that contains DATA_STRUCTURE_2: postings and number of documents its in </br>
-DATA_STRUCTURE_2: postings    := python dictionary, Key is filename, Value is number of keyword occurances
+DATA_STRUCTURE_1: term: user defined class that contains DATA_STRUCTURE_2: postings and number of documents its in </br>
+DATA_STRUCTURE_2: postings: python dictionary, Key is filename, Value is number of keyword occurances
 </br>
-DATA_STRUCTURE_3: dict_docs   := python dictionary, Key is filename, Value is number of words
+DATA_STRUCTURE_3: dict_docs: python dictionary, Key is filename, Value is number of words
 </br>
-DATA_STRUCTURE_4: dict_terms  := python dictionary, Key is term "string" , Value is DATA_STRUCTURE_1: term 
+DATA_STRUCTURE_4: dict_terms: python dictionary, Key is term "string" , Value is DATA_STRUCTURE_1: term 
 </br>
-DATA_STRUCTURE_5: stop_words  := python list, conatians all stopwords
+DATA_STRUCTURE_5: stop_words: python list, conatians all stopwords
 </br>
 
 ## Parseing and Indexing
@@ -17,9 +17,9 @@ DATA_STRUCTURE_5: stop_words  := python list, conatians all stopwords
  
 - loadWcountWDoc(dict_terms,dict_docs,path): Opens all files and loads the dictionary of document using there filename as an index to the number of there word count. Passes every line of text for each file split on spaces TO word_count
 
-- word_count(line, dict_terms,dict_docs,fname): processes every word in the document
+- word_count(line, dict_terms,dict_docs,fname): Processes every word in the document
 
-- line_process(line, stopwords),  processes every word in a line
+- line_process(line, stopwords): Processes every word in a line
 
  
 ## Input Output
