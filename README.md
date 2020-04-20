@@ -1,6 +1,5 @@
-# IRassn1
+# Inverted Index
 
-Design:
 DATA_STRUCTURE_1: term: user defined class that contains DATA_STRUCTURE_2: postings and number of documents its in </br>
 DATA_STRUCTURE_2: postings: python dictionary, Key is filename, Value is number of keyword occurances
 </br>
