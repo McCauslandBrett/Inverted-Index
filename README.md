@@ -12,20 +12,19 @@ DATA_STRUCTURE_5: stop_words  := python list, conatians all stopwords
 </br>
 
 ## Parseing and Indexing
-Done with the use of functions:
-     - load_stops(stopwords,path):
-          opens the file in the designated path with the stopwods and populates a list with the stopwords
-  </br>
-     - loadWcountWDoc(dict_terms,dict_docs,path):
-           opens all files and loads the dictionary of document using 
-           there filename as an index to the number of there word count
-           PASSES every line of text for each file split on spaces TO word_count
-     </br>
-     - word_count(line, dict_terms,dict_docs,fname):
-            processes every word in the document
-       </br>     
-     - line_process(line, stopwords),  processes every word in a line
-      </br> 
+
+- load_stops(stopwords,path): Opens the file in the designated path with the stopwods and populates a list with the stopwords
+ </br>
+ 
+- loadWcountWDoc(dict_terms,dict_docs,path): Opens all files and loads the dictionary of document using there filename as an index to the number of there word count. Passes every line of text for each file split on spaces TO word_count
+</br>
+
+- word_count(line, dict_terms,dict_docs,fname): processes every word in the document
+</br>
+
+- line_process(line, stopwords),  processes every word in a line
+ </br> 
+ 
 ## Input Output
 - Prompt(dict_terms,dict_docs): called After the terms and documents have already been indexed, type (quit or QUIT) to stop
 </br>
